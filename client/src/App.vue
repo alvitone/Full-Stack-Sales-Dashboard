@@ -184,7 +184,7 @@ body {
 /* Main Container */
 .dashboard {
   max-width: 1200px;
-  width: 100%;
+  width: 120%;
   margin: 0 auto;
   padding: 40px 24px;
   box-sizing: border-box;
