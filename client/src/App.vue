@@ -30,22 +30,24 @@ const statusSummary = ref([])
 const revenueTrend = ref([])
 const range = ref(7)
 const loading = ref(false)
+const API_BASE = "https://sales-dashboard-api-p5n5.onrender.com";
+
 
 const fetchData = async () => {
   loading.value = true
   try {
     const summaryRes = await axios.get(
-      `http://localhost:5000/api/dashboard/summary?range=${range.value}`
+      `${API_BASE}/api/dashboard/summary?range=${range.value}`
     )
     summary.value = summaryRes.data
 
     const statusRes = await axios.get(
-      `http://localhost:5000/api/dashboard/status-summary?range=${range.value}`
+      `${API_BASE}/api/dashboard/status-summary?range=${range.value}`
     )
     statusSummary.value = statusRes.data
 
     const revenueRes = await axios.get(
-      `http://localhost:5000/api/dashboard/revenue-trend?range=${range.value}`
+      `${API_BASE}/api/dashboard/revenue-trend?range=${range.value}`
     )
     revenueTrend.value = revenueRes.data
   } catch (err) {
